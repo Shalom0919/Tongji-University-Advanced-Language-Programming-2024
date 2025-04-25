@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+static int steps;
 
 /* ----具体要求----
    1、不允许添加其它头文件
@@ -24,12 +25,14 @@ using namespace std;
 void hanoi(int n, char src, char tmp, char dst)
 {
 	if (n == 1) {
-		cout << setw(2) << n << "# " << src << "-->" << dst << endl;
+		steps++;
+		cout << setw(5) << steps << ": " << setw(2) << n << "# " << src << "-->" << dst << endl;
 		return;
 	}
 
 	hanoi(n - 1, src, dst, tmp);
-	cout << setw(2) << n << "# " << src << "-->" << dst << endl;
+	steps++;
+	cout << setw(5) << steps << ": " << setw(2) << n << "# " << src << "-->" << dst << endl;
 	hanoi(n - 1, tmp, src, dst);
 	return;
 }
