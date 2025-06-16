@@ -1,123 +1,130 @@
-/* 2452098 ¼ÆËã»ú ÕÔ³çÖÎ */
+/* 2452098 è®¡ç®—æœº èµµå´‡æ²» */
 
-/* ÔÊĞí°´Ğè¼ÓÈëÏµÍ³µÄºê¶¨Òå¡¢ĞèÒªµÄÍ·ÎÄ¼şµÈ */
+/* å…è®¸æŒ‰éœ€åŠ å…¥ç³»ç»Ÿçš„å®å®šä¹‰ã€éœ€è¦çš„å¤´æ–‡ä»¶ç­‰ */
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 #include "read_stulist.h"
 using namespace std;
 
-#define MAX_FILENAME_LEN		512	//¶¨ÒåÎÄ¼şÃûµÄ×î´ó³¤¶È
+#define MAX_FILENAME_LEN		512	//å®šä¹‰æ–‡ä»¶åçš„æœ€å¤§é•¿åº¦
 
-/* stu_metge Àà´æ·ÅÃ¿¸öÑ§ÉúµÄĞÅÏ¢£¬°üÀ¨Ñ§ºÅ¡¢ĞÕÃû¡¢ÆäËüĞèÒªµÄË½ÓĞĞÅÏ¢£¬ÒÑÓĞÄÚÈİ²»×¼¶¯£¬¿É¼ÓÈë·ûºÏÏŞÖÆÒªÇóµÄĞÂÄÚÈİ */
+/* stu_metge ç±»å­˜æ”¾æ¯ä¸ªå­¦ç”Ÿçš„ä¿¡æ¯ï¼ŒåŒ…æ‹¬å­¦å·ã€å§“åã€å…¶å®ƒéœ€è¦çš„ç§æœ‰ä¿¡æ¯ï¼Œå·²æœ‰å†…å®¹ä¸å‡†åŠ¨ï¼Œå¯åŠ å…¥ç¬¦åˆé™åˆ¶è¦æ±‚çš„æ–°å†…å®¹ */
 class stu_merge {
 private:
-	int  stu_no;					//Ñ§ºÅ
-	char stu_name[MAX_NAME_LEN];    //ĞÕÃû
+	int  stu_no;					//å­¦å·
+	char stu_name[MAX_NAME_LEN];    //å§“å
 	friend class stu_list;
-	/* ÔÊĞí°´Ğè¼ÓÈëprivateÊı¾İ³ÉÔ±¡¢³ÉÔ±º¯ÊıÒÔ¼°ÆäËüĞèÒªµÄÄÚÈİ */
+	/* å…è®¸æŒ‰éœ€åŠ å…¥privateæ•°æ®æˆå‘˜ã€æˆå‘˜å‡½æ•°ä»¥åŠå…¶å®ƒéœ€è¦çš„å†…å®¹ */
 public:
-	//±¾Àà²»ÔÊĞí¶¨ÒåÈÎºÎµÄ¹«ÓĞÊı¾İ³ÉÔ±¼°³ÉÔ±º¯Êı
+	//æœ¬ç±»ä¸å…è®¸å®šä¹‰ä»»ä½•çš„å…¬æœ‰æ•°æ®æˆå‘˜åŠæˆå‘˜å‡½æ•°
 };
 
-/* stu_list ÀàÕû¸öÑ¡¿ÎĞÅÏ¢£¬ÒÑÓĞÄÚÈİ²»×¼¶¯£¬¿É¼ÓÈë·ûºÏÏŞÖÆÒªÇóµÄĞÂÄÚÈİ */
+/* stu_list ç±»æ•´ä¸ªé€‰è¯¾ä¿¡æ¯ï¼Œå·²æœ‰å†…å®¹ä¸å‡†åŠ¨ï¼Œå¯åŠ å…¥ç¬¦åˆé™åˆ¶è¦æ±‚çš„æ–°å†…å®¹ */
 class stu_list {
 private:
-	student list_round_1[MAX_STU_NUM];	//µÚÒ»ÂÖÑ¡¿ÎµÄÑ§ÉúÃûµ¥£¨²»ÅÅĞò¡¢²»È¥ÖØ£©
-	int list_num_1;						//µÚÒ»ÂÖÑ¡¿ÎµÄÑ§ÉúÈËÊı
+	student list_round_1[MAX_STU_NUM];	//ç¬¬ä¸€è½®é€‰è¯¾çš„å­¦ç”Ÿåå•ï¼ˆä¸æ’åºã€ä¸å»é‡ï¼‰
+	int list_num_1;						//ç¬¬ä¸€è½®é€‰è¯¾çš„å­¦ç”Ÿäººæ•°
 
-	student list_round_2[MAX_STU_NUM];	//µÚ¶şÂÖÑ¡¿ÎµÄÑ§ÉúÃûµ¥£¨²»ÅÅĞò¡¢²»È¥ÖØ£©
-	int list_num_2;						//µÚ¶şÂÖÑ¡¿ÎµÄÑ§ÉúÈËÊı
+	student list_round_2[MAX_STU_NUM];	//ç¬¬äºŒè½®é€‰è¯¾çš„å­¦ç”Ÿåå•ï¼ˆä¸æ’åºã€ä¸å»é‡ï¼‰
+	int list_num_2;						//ç¬¬äºŒè½®é€‰è¯¾çš„å­¦ç”Ÿäººæ•°
 
-	stu_merge list_merge[MAX_STU_NUM];	//ºÏ²¢ºóµÄÑ§ÉúÃûµ¥£¨È¥ÖØ£¬°´ÉıĞòÅÅÁĞ£©
-	int list_merge_num;					//ºÏ²¢ºóµÄÑ§ÉúÈËÊı£¨Ä¿Ç°²»´òÓ¡£¬µ«¿ÉÓÃÓÚÄÚ²¿¹ÜÀí£¬Èç¹û²»ĞèÒª£¬Ò²²»ÒªÉ¾³ı£©
+	stu_merge list_merge[MAX_STU_NUM];	//åˆå¹¶åçš„å­¦ç”Ÿåå•ï¼ˆå»é‡ï¼ŒæŒ‰å‡åºæ’åˆ—ï¼‰
+	int list_merge_num;					//åˆå¹¶åçš„å­¦ç”Ÿäººæ•°ï¼ˆç›®å‰ä¸æ‰“å°ï¼Œä½†å¯ç”¨äºå†…éƒ¨ç®¡ç†ï¼Œå¦‚æœä¸éœ€è¦ï¼Œä¹Ÿä¸è¦åˆ é™¤ï¼‰
 
 	int name_len_1;
 	int name_len_2;
-	/* ÔÊĞí°´Ğè¼ÓÈëprivateÊı¾İ³ÉÔ±ºÍ³ÉÔ±º¯Êı
-	   ×¢Òâ£¬²»ÔÊĞí¼ÓÈëarray / set / map / vectorµÈSTLÈİÆ÷ */
+	/* å…è®¸æŒ‰éœ€åŠ å…¥privateæ•°æ®æˆå‘˜å’Œæˆå‘˜å‡½æ•°
+	   æ³¨æ„ï¼Œä¸å…è®¸åŠ å…¥array / set / map / vectorç­‰STLå®¹å™¨ */
 
 public:
 	stu_list(int num1 = 0, int num2 = 0);
-	int read(const char* filename, const int round);	//´ÓÎÄ¼şÖĞ¶ÁÈëÑ¡¿ÎĞÅÏ¢£¬roundÎª1/2£¬±íÊ¾Ñ¡¿ÎÂÖ´Î
-	int print(const char* prompt = NULL);				//´òÓ¡×îÖÕµÄÑ¡¿ÎÃûµ¥
+	int read(const char* filename, const int round);	//ä»æ–‡ä»¶ä¸­è¯»å…¥é€‰è¯¾ä¿¡æ¯ï¼Œroundä¸º1/2ï¼Œè¡¨ç¤ºé€‰è¯¾è½®æ¬¡
+	int print(const char* prompt = NULL);				//æ‰“å°æœ€ç»ˆçš„é€‰è¯¾åå•
 	void stu_sort();
 	int stu_union();
-	/* ÔÊĞí°´Ğè¼ÓÈëÆäËüpublic³ÉÔ±º¯Êı£¨ÌáÊ¾£ººÏ²¢¡¢È¥ÖØ¡¢ÅÅĞòµÈ£©
-	   ²»ÔÊĞí¶¨Òå¹«ÓĞµÄÊı¾İ³ÉÔ±
-	   ²»ÔÊĞíÔÚ³ÉÔ±º¯ÊıÖĞÊ¹ÓÃarray / set / map / vectorµÈSTLÈİÆ÷ */
+	/* å…è®¸æŒ‰éœ€åŠ å…¥å…¶å®ƒpublicæˆå‘˜å‡½æ•°ï¼ˆæç¤ºï¼šåˆå¹¶ã€å»é‡ã€æ’åºç­‰ï¼‰
+	   ä¸å…è®¸å®šä¹‰å…¬æœ‰çš„æ•°æ®æˆå‘˜
+	   ä¸å…è®¸åœ¨æˆå‘˜å‡½æ•°ä¸­ä½¿ç”¨array / set / map / vectorç­‰STLå®¹å™¨ */
 };
 
-/* --- ÏÂÃæ¿ÉÒÔ¸ø³östu_merge/stu_listÁ½¸öÀàµÄ³ÉÔ±º¯ÊıµÄÌåÍâÊµÏÖ --- */
+/* --- ä¸‹é¢å¯ä»¥ç»™å‡ºstu_merge/stu_listä¸¤ä¸ªç±»çš„æˆå‘˜å‡½æ•°çš„ä½“å¤–å®ç° --- */
 void stu_list::stu_sort()
 {
 	for (int i = 0; i < list_num_1; i++) {
-		if (name_len_1 < (int)strlen(list_round_1[i].name))
-			name_len_1 = (int)strlen(list_round_1[i].name);
-
 		for (int j = i + 1; j < list_num_1; j++) {
 			if (list_round_1[i].no > list_round_1[j].no) {
-				int t = list_round_1[i].no;
-				list_round_1[i].no = list_round_1[j].no;
-				list_round_1[j].no = t;
-
-				char temp[MAX_NAME_LEN];
-				strcpy(temp, list_round_1[i].name);
-				strcpy(list_round_1[i].name, list_round_1[j].name);
-				strcpy(list_round_1[j].name,temp);
+				student temp = list_round_1[i];
+				list_round_1[i] = list_round_1[j];
+				list_round_1[j] = temp;
 			}
 		}
 	}
 
-	for (int i = 0; i < list_num_2; i++) {
-		if (name_len_2 < (int)strlen(list_round_2[i].name))
-			name_len_2 = (int)strlen(list_round_2[i].name);
-
-		for (int j = i + 1; j < list_num_2; j++) {
-			if (list_round_2[i].no > list_round_2[j].no) {
-				int t = list_round_2[i].no;
-				list_round_2[i].no = list_round_2[j].no;
-				list_round_2[j].no = t;
-				char temp[MAX_NAME_LEN];
-				strcpy(temp, list_round_2[i].name);
-				strcpy(list_round_2[i].name, list_round_2[j].name);
-				strcpy(list_round_2[j].name,temp);
+	if (list_num_1 > 0) {
+		int k = 1;
+		for (int i = 1; i < list_num_1; i++) {
+			if (list_round_1[i].no != list_round_1[k - 1].no) {
+				if (i != k) {
+					list_round_1[k] = list_round_1[i];
+				}
+				k++;
 			}
 		}
+		list_num_1 = k;
+	}
+
+	for (int i = 0; i < list_num_2; i++) {
+		for (int j = i + 1; j < list_num_2; j++) {
+			if (list_round_2[i].no > list_round_2[j].no) {
+				student temp = list_round_2[i];
+				list_round_2[i] = list_round_2[j];
+				list_round_2[j] = temp;
+			}
+		}
+	}
+
+	if (list_num_2 > 0) {
+		int k = 1;
+		for (int i = 1; i < list_num_2; i++) {
+			if (list_round_2[i].no != list_round_2[k - 1].no) {
+				if (i != k) {
+					list_round_2[k] = list_round_2[i];
+				}
+				k++;
+			}
+		}
+		list_num_2 = k;
 	}
 }
 
 int stu_list::stu_union()
 {
-	int i = 0; // list_round_1 µÄÏÂ±ê
-	int j = 0; // list_round_2 µÄÏÂ±ê
-	int k = 0; // list_merge µÄÏÂ±ê
+	int i = 0; // list_round_1 çš„ä¸‹æ ‡
+	int j = 0; // list_round_2 çš„ä¸‹æ ‡
+	int k = 0; // list_merge çš„ä¸‹æ ‡
 
-	// µ±Á½¸öÁĞ±í¶¼»¹ÓĞÔªËØÊ±£¬½øĞĞ±È½ÏºÏ²¢
 	while (i < list_num_1 && j < list_num_2) {
 		if (list_round_1[i].no < list_round_2[j].no) {
-			// ½« list_1 µÄµ±Ç°Ñ§Éú¸´ÖÆµ½ merge ÁĞ±í
 			list_merge[k].stu_no = list_round_1[i].no;
 			strcpy(list_merge[k].stu_name, list_round_1[i].name);
 			i++;
 		}
 		else if (list_round_2[j].no < list_round_1[i].no) {
-			// ½« list_2 µÄµ±Ç°Ñ§Éú¸´ÖÆµ½ merge ÁĞ±í
 			list_merge[k].stu_no = list_round_2[j].no;
 			strcpy(list_merge[k].stu_name, list_round_2[j].name);
 			j++;
 		}
-		else { // Ñ§ºÅÏàµÈ£¬ÊÇÍ¬Ò»Ñ§Éú£¬È¥ÖØ´¦Àí
-			// Ö»¸´ÖÆÒ»´Î£¬µ«Á½¸öÁĞ±íµÄÏÂ±ê¶¼ÒªÒÆ¶¯
+		else {
 			list_merge[k].stu_no = list_round_1[i].no;
 			strcpy(list_merge[k].stu_name, list_round_1[i].name);
 			i++;
 			j++;
 		}
-		k++; // ÒÆ¶¯ºÏ²¢ºóÁĞ±íµÄÏÂ±ê
+		k++;
 	}
 
-	// Èç¹ûµÚÒ»ÂÖÁĞ±í»¹ÓĞÊ£Óà£¬¸´ÖÆÊ£Óà²¿·Ö
 	while (i < list_num_1) {
 		list_merge[k].stu_no = list_round_1[i].no;
 		strcpy(list_merge[k].stu_name, list_round_1[i].name);
@@ -125,7 +132,6 @@ int stu_list::stu_union()
 		k++;
 	}
 
-	// Èç¹ûµÚ¶şÂÖÁĞ±í»¹ÓĞÊ£Óà£¬¸´ÖÆÊ£Óà²¿·Ö
 	while (j < list_num_2) {
 		list_merge[k].stu_no = list_round_2[j].no;
 		strcpy(list_merge[k].stu_name, list_round_2[j].name);
@@ -133,69 +139,44 @@ int stu_list::stu_union()
 		k++;
 	}
 
-	// ¸üĞÂºÏ²¢ºóµÄ×ÜÈËÊı
 	this->list_merge_num = k;
 	return this->list_merge_num;
 }
 
-/***************************************************************************
-  º¯ÊıÃû³Æ£º
-  ¹¦    ÄÜ£º´ÓÎÄ¼şÖĞ¶ÁÈëÑ¡¿ÎĞÅÏ¢£¬roundÎª1/2£¬±íÊ¾Ñ¡¿ÎÂÖ´Î
-  ÊäÈë²ÎÊı£º
-  ·µ »Ø Öµ£º
-  Ëµ    Ã÷£º¹¹Ôìº¯Êı£¬°´ĞèÍê³É³õÊ¼»¯¹¦ÄÜ£¬Èç¹û²»ĞèÒª£¬±£Áô¿Õº¯Êı¼´¿É
-***************************************************************************/
-stu_list::stu_list(int num1,int num2)
-{
-}
+stu_list::stu_list(int num1, int num2){}
 
-/***************************************************************************
-  º¯ÊıÃû³Æ£º
-  ¹¦    ÄÜ£ºÑİÊ¾¾²Ì¬Á´½Ó¿âµÄÊ¹ÓÃ£¬±¾º¯ÊıÖĞµ÷ÓÃ¾²Ì¬Á´½Ó¿âÖĞµÄÔ¤ÖÃº¯Êı
-  ÊäÈë²ÎÊı£º
-  ·µ »Ø Öµ£º
-  Ëµ    Ã÷£º±¾º¯Êı²»ĞèÒªĞŞ¸Ä 
-***************************************************************************/
 int stu_list::read(const char* filename, const int round)
 {
 	int ret = 0;
-	/* ¶ÁÈ¡µÚ1/2ÂÖµÄÑ¡¿ÎÃûµ¥²¢´òÓ¡ */
 	switch (round) {
-		case 1:
-			this->list_num_1 = read_stulist(filename, this->list_round_1, MAX_STU_NUM);
-			if (this->list_num_1 > 0)
-				print_stulist("µÚÒ»ÂÖÑ¡¿ÎÃûµ¥£º", this->list_round_1, this->list_num_1);
-			else
-				ret = -1;
-			break;
-		case 2:
-			this->list_num_2 = read_stulist(filename, this->list_round_2, MAX_STU_NUM);
-			if (this->list_num_2 > 0)
-				print_stulist("µÚ¶şÂÖÑ¡¿ÎÃûµ¥£º", this->list_round_2, this->list_num_2);
-			else
-				ret = -1;
-			break;
-		default:
+	case 1:
+		this->list_num_1 = read_stulist(filename, this->list_round_1, MAX_STU_NUM);
+		if (this->list_num_1 > 0)
+			print_stulist("ç¬¬ä¸€è½®é€‰è¯¾åå•ï¼š", this->list_round_1, this->list_num_1);
+		else
 			ret = -1;
-			break;
+		break;
+	case 2:
+		this->list_num_2 = read_stulist(filename, this->list_round_2, MAX_STU_NUM);
+		if (this->list_num_2 > 0)
+			print_stulist("ç¬¬äºŒè½®é€‰è¯¾åå•ï¼š", this->list_round_2, this->list_num_2);
+		else
+			ret = -1;
+		break;
+	default:
+		ret = -1;
+		break;
 	}
 
 	return ret;
 }
 
-
-/***************************************************************************
-  º¯ÊıÃû³Æ£º
-  ¹¦    ÄÜ£º
-  ÊäÈë²ÎÊı£º
-  ·µ »Ø Öµ£º
-  Ëµ    Ã÷£º´òÓ¡×îÖÕµÄÑ¡¿ÎÃûµ¥
-***************************************************************************/
 int stu_list::print(const char* prompt)
 {
-	cout << prompt << endl;
+	if (prompt) {
+		cout << prompt << endl;
+	}
 
-	// ´ÓºÏ²¢ºóµÄÁĞ±íÖĞÕÒµ½×î³¤µÄĞÕÃû³¤¶È£¬ÓÃÓÚ¶ÔÆë
 	int max_name_len = 0;
 	for (int i = 0; i < this->list_merge_num; i++) {
 		int len = strlen(this->list_merge[i].stu_name);
@@ -203,45 +184,18 @@ int stu_list::print(const char* prompt)
 			max_name_len = len;
 		}
 	}
+    if (max_name_len < 4) {
+        max_name_len = 4;
+    }
 
-	// ´òÓ¡±íÍ·
-	cout << "=====================================";
-	for (int i = 0; i < max_name_len; ++i) cout << "=";
-	cout << "\n";
-
-	cout << " ĞòºÅ  Ñ§ºÅ     ĞÕÃû";
-	// ´òÓ¡ĞÕÃûÁĞµÄÌî³ä¿Õ¸ñ
-	for (int i = 0; i < max_name_len - 4; ++i) { // "ĞÕÃû"Õ¼4¸ö×Ö½Ú(2¸öºº×Ö)
+	cout << "=================================================" << endl;
+	cout << " åºå·  å­¦å·     å§“å";
+	for (int i = 0; i < max_name_len - 4; i++)
 		cout << " ";
-	}
-	cout << "  µÚÒ»ÂÖ  µÚ¶şÂÖ \n";
+	cout << "  ç¬¬ä¸€è½®  ç¬¬äºŒè½®" << endl;
+	cout << "=================================================" << endl;
 
-	cout << "=====================================";
-	for (int i = 0; i < max_name_len; ++i) cout << "=";
-	cout << "\n";
-
-	// ±éÀú×îÖÕÃûµ¥²¢´òÓ¡Ã¿Ò»ĞĞ
 	for (int i = 0; i < this->list_merge_num; i++) {
-		// ´òÓ¡ĞòºÅ
-		cout << " " << i + 1;
-		if (i + 1 < 10) cout << "     ";
-		else if (i + 1 < 100) cout << "    ";
-		else cout << "   ";
-
-		// ´òÓ¡Ñ§ºÅ
-		cout << this->list_merge[i].stu_no << "   ";
-
-		// ´òÓ¡ĞÕÃû
-		cout << this->list_merge[i].stu_name;
-
-		// ´òÓ¡ĞÕÃûºóµÄÌî³ä¿Õ¸ñÒÔ¶ÔÆë
-		int current_name_len = strlen(this->list_merge[i].stu_name);
-		for (int p = 0; p < max_name_len - current_name_len; ++p) {
-			cout << " ";
-		}
-		cout << "     ";
-
-		// ¼ì²é²¢´òÓ¡µÚÒ»ÂÖÑ¡¿ÎÇé¿ö
 		bool in_round_1 = false;
 		for (int r1 = 0; r1 < list_num_1; ++r1) {
 			if (list_round_1[r1].no == this->list_merge[i].stu_no) {
@@ -249,9 +203,7 @@ int stu_list::print(const char* prompt)
 				break;
 			}
 		}
-		cout << (in_round_1 ? "Y" : "N") << "       ";
 
-		// ¼ì²é²¢´òÓ¡µÚ¶şÂÖÑ¡¿ÎÇé¿ö
 		bool in_round_2 = false;
 		for (int r2 = 0; r2 < list_num_2; ++r2) {
 			if (list_round_2[r2].no == this->list_merge[i].stu_no) {
@@ -259,10 +211,28 @@ int stu_list::print(const char* prompt)
 				break;
 			}
 		}
-		cout << (in_round_2 ? "Y" : "N");
+		
+		cout << " " << left << setw(6) << i + 1;
+		cout << left << setw(8) << this->list_merge[i].stu_no << " ";
+		cout << left << setw(max_name_len) << this->list_merge[i].stu_name;
 
-		cout << endl;
+        const char* status1 = "";
+        const char* status2 = "";
+
+        if (in_round_1 && in_round_2) {
+            status1 = "Y";
+            status2 = "Y";
+        } else if (in_round_1 && !in_round_2) {
+            status1 = "Y";
+            status2 = "é€€è¯¾";
+        } else if (!in_round_1 && in_round_2) {
+            status1 = "/";
+            status2 = "è¡¥é€‰";
+        }
+        
+        cout << "  " << left << setw(8) << status1 << status2 << endl;
 	}
+    cout << "=================================================" << endl;
 	return 0;
 }
 
@@ -270,26 +240,22 @@ int main(int argc, char** argv)
 {
 	char file1[MAX_FILENAME_LEN], file2[MAX_FILENAME_LEN];
 
-	cout << "ÇëÊäÈëÇ°Ò»ÂÖÑ¡¿ÎµÄÊı¾İÎÄ¼ş : ";
-	gets_s(file1); //cin²»ÄÜ¶ÁÓĞ¿Õ¸ñµÄÎÄ¼ş
-
-	cout << "ÇëÊäÈëºóÒ»ÂÖÑ¡¿ÎµÄÊı¾İÎÄ¼ş : ";
-	gets_s(file2);
+	cout << "è¯·è¾“å…¥å‰ä¸€è½®é€‰è¯¾çš„æ•°æ®æ–‡ä»¶ : ";
+	gets_s(file1, MAX_FILENAME_LEN);
+	cout << "è¯·è¾“å…¥åä¸€è½®é€‰è¯¾çš„æ•°æ®æ–‡ä»¶ : ";
+	gets_s(file2, MAX_FILENAME_LEN);
 
 	stu_list list;
 
-	/* ¶ÁÈëÊı¾İ */
 	if (list.read(file1, 1) < 0)
 		return -1;
 	if (list.read(file2, 2) < 0)
 		return -1;
 
-	/* ´¦ÀíÊı¾İ */
 	list.stu_sort();
 	list.stu_union();
 
-	/* ´òÓ¡ */
-	list.print("×îÖÕÑ¡¿ÎÃûµ¥");
+	list.print("æœ€ç»ˆé€‰è¯¾åå•");
 
 	return 0;
 }
