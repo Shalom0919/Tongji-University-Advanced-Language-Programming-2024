@@ -6,15 +6,16 @@
 ![School](https://img.shields.io/badge/School-Tongji_University-005697?style=for-the-badge&logo=google-scholar)
 ![Semester](https://img.shields.io/badge/Semester-2024--2025_Spring-orange?style=for-the-badge)
 ![Language](https://img.shields.io/badge/Language-C%2B%2B%20%2F%20C-blue?style=for-the-badge&logo=c%2B%2B)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
 </div>
 
 ---
 
 由于本人想给电脑清内存但是又不想给课程项目和资料都直接删了，本着开源精神，现在放在这里供学弟学妹们交流学习，请学弟学妹们千万不要抄袭，抄袭一律会获得按照学校要求的处罚！
+
 欢迎同学们动动小手Star⭐一下🥹，这里的作业全部是本人经过txt-compare确认和老师的输出100%相同后才提交的！
-如有问题欢迎联系我：2964758804@qq.com
+
+>如有问题欢迎联系我：2964758804@qq.com
 
 ---
 
