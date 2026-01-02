@@ -12,45 +12,27 @@
 
 ---
 
+由于本人想给电脑清内存但是又不想给课程项目和资料都直接删了，本着开源精神，现在放在这供学弟学妹和学长学姐们交流学习，请学弟学妹们千万不要抄袭，抄袭一律会获得按照学校要求的处罚。欢迎同学们动动小手Star⭐一下🥹，这里的作业全部是本人经过txt-compare确认和老师的输出100%相同后才提交的！
+
+---
+
 ## 📖 项目介绍 (Introduction)
 
 本仓库包含了同济大学 2024-2025 春季学期 **高级语言程序设计** 课程的所有相关资料。内容涵盖了课程作业、源代码以及相关的项目实践。
-
-This repository contains course materials for the **Advanced Programming Language Design** course at Tongji University (2024-2025 Spring). It includes assignments, source code, and related projects.
 
 ## 📂 仓库结构 (Repository Structure)
 
 ```text
 ├── PDF Homework          # 课程作业 (Assignments in PDF)
 ├── Programme             # 源代码 (Source Code)
-│   ├── 3-b1-1.c          # Chapter 3, Problem B1-1
+│   ├── 3-b1-1.c
 │   └── ...
 └── README.md             # 项目说明文档
 ```
 
-## 🛠️ 环境与使用 (Usage)
-
-本项目代码主要由 C 和 C++ 编写。建议使用 `gcc` 或 `g++` 进行编译。
-
-The code is primarily written in C and C++. It is recommended to use `gcc` or `g++` for compilation.
-
-### 编译示例 (Compilation Example)
-
-**C Source:**
-```bash
-gcc Programme/3-b1-1.c -o output
-./output
-```
-
-**C++ Source:**
-```bash
-g++ Programme/3-b1-2.cpp -o output
-./output
-```
-
 ## 📚 课程大作业 (Course Projects)
 
-以下是课程相关的部分大作业链接：
+以下是课程相关的大作业链接：
 
 | 项目名称 (Project) | 描述 (Description) | 链接 (Link) |
 | :--- | :--- | :--- |
