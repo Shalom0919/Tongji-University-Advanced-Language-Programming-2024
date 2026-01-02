@@ -1,35 +1,44 @@
-<div align="center">
+# Tongji University Advanced Language Programming 2024
 
-# 同济大学高级语言程序设计
-### Advanced Programming Language Design (2024-2025 Spring)
+Welcome to the repository for the 2024 Advanced Language Programming course at Tongji University. This repository contains all relevant course materials, assignments, and resources.
 
-![School](https://img.shields.io/badge/School-Tongji_University-005697?style=for-the-badge&logo=google-scholar)
-![Semester](https://img.shields.io/badge/Semester-2024--2025_Spring-orange?style=for-the-badge)
+## 📚 Course Overview
 
-</div>
+This course covers advanced topics in programming language theory and practice, designed to deepen your understanding of software development.
+
+### Key Topics
+- **Functional Programming**
+- **Type Systems**
+- **Compiler Design**
+- **Concurrency Models**
+
+## 📂 Repository Structure
+
+- **/assignments**: Weekly coding assignments and projects.
+- **/lectures**: Slides and notes from lectures.
+- **/resources**: Supplementary reading materials and tools.
+- **/examples**: Code examples demonstrated during class.
+
+## 🚀 Getting Started
+
+To get started with the course materials:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Shalom0919/Tongji-University-Advanced-Language-Programming-2024.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Tongji-University-Advanced-Language-Programming-2024
+   ```
+
+## 🤝 Contribution
+
+Students are encouraged to contribute by submitting pull requests for any corrections or additional resources that might benefit the class.
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-## 📂 仓库结构
-
-```text
-├── PDF Homework          # 课程作业
-├── Program               # 源代码
-└── README.md
-```
-
----
-
-## 📚 课程大作业部分
-
-[汉诺塔](https://github.com/Shalom0919/Project_Hanoi)
-
-[弹出式菜单(算是“中”作业)](https://github.com/Shalom0919/Project_PopMenu)
-
-[数织游戏](https://github.com/Shalom0919/Project_Nonogram)
-
----
-
-<div align="center">
-<p>© 2025 Tongji University</p>
-</div>
+*Maintained by [Shalom0919](https://github.com/Shalom0919)*
