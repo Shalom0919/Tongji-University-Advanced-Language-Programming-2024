@@ -15,7 +15,7 @@
 
 欢迎同学们动动小手Star⭐一下🥹，这里的作业全部是本人经过txt-compare确认和老师的输出100%相同后才提交的！
 
->如有问题欢迎联系我：2964758804@qq.com
+> 如有问题欢迎联系我：2964758804@qq.com
 
 ---
 
@@ -35,17 +35,19 @@
 
 ## 📚 课程大作业 (Course Projects)
 
-以下是课程相关的大作业链接：~~All Powered By Gemini~~墙裂推荐大家合理地使用国外大模型工具提高项目编程开发效率，不要用国内大模型。
+以下是课程相关的大作业链接：
+
+> ~~All Powered By Gemini~~墙裂推荐大家合理地使用国外大模型工具提高项目编程开发效率，不要用国内大模型。
 
 | 项目名称 (Project) | 链接 (Link) |
 | :--- | :--- |
 | **汉诺塔 (Hanoi)** | [View Repo](https://github.com/Shalom0919/Project_Hanoi) |
-| **弹出式菜单 (PopMenu)** | [View Repo](https://github.com/Shalom0919/Project_PopMenu) |
+| **"中"作业 弹出式菜单 (PopMenu)** | [View Repo](https://github.com/Shalom0919/Project_PopMenu) |
 | **数织游戏 (Nonogram)** | [View Repo](https://github.com/Shalom0919/Project_Nonogram) |
 
 ---
 
 <div align="center">
-<p>Maintained by <a href="https://github.com/Shalom0919">Shalom0919</a></p>
+<p><a href="https://github.com/Shalom0919">Shalom0919</a></p>
 <p>© 2025 Tongji University</p>
 </div>
