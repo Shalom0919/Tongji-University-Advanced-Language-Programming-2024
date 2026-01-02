@@ -12,7 +12,9 @@
 
 ---
 
-由于本人想给电脑清内存但是又不想给课程项目和资料都直接删了，本着开源精神，现在放在这供学弟学妹和学长学姐们交流学习，请学弟学妹们千万不要抄袭，抄袭一律会获得按照学校要求的处罚。欢迎同学们动动小手Star⭐一下🥹，这里的作业全部是本人经过txt-compare确认和老师的输出100%相同后才提交的！
+由于本人想给电脑清内存但是又不想给课程项目和资料都直接删了，本着开源精神，现在放在这里供学弟学妹们交流学习，请学弟学妹们千万不要抄袭，抄袭一律会获得按照学校要求的处罚！
+欢迎同学们动动小手Star⭐一下🥹，这里的作业全部是本人经过txt-compare确认和老师的输出100%相同后才提交的！
+如有问题欢迎联系我：2964758804@qq.com
 
 ---
 
@@ -32,13 +34,13 @@
 
 ## 📚 课程大作业 (Course Projects)
 
-以下是课程相关的大作业链接：
+以下是课程相关的大作业链接：~~All Powered By Gemini~~墙裂推荐大家合理地使用国外大模型工具提高项目编程开发效率，不要用国内大模型。
 
-| 项目名称 (Project) | 描述 (Description) | 链接 (Link) |
-| :--- | :--- | :--- |
-| **汉诺塔 (Hanoi)** | 经典的汉诺塔问题递归与非递归实现 | [View Repo](https://github.com/Shalom0919/Project_Hanoi) |
-| **弹出式菜单 (PopMenu)** | 控制台弹出式菜单设计（“中”作业） | [View Repo](https://github.com/Shalom0919/Project_PopMenu) |
-| **数织游戏 (Nonogram)** | 逻辑解谜游戏数织的实现 | [View Repo](https://github.com/Shalom0919/Project_Nonogram) |
+| 项目名称 (Project) | 链接 (Link) |
+| :--- | :--- |
+| **汉诺塔 (Hanoi)** | [View Repo](https://github.com/Shalom0919/Project_Hanoi) |
+| **弹出式菜单 (PopMenu)** | [View Repo](https://github.com/Shalom0919/Project_PopMenu) |
+| **数织游戏 (Nonogram)** | [View Repo](https://github.com/Shalom0919/Project_Nonogram) |
 
 ---
 
